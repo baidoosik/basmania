@@ -1,12 +1,40 @@
 from django.contrib import admin
-from .models import Host,Season,Jointeam,Team,Position,Player,Performance,Match,Trans
+from .models import Team,Host,Season,Jointeam,Player,Match
 
-admin.site.register(Host)
-admin.site.register(Season)
-admin.site.register(Jointeam)
-admin.site.register(Team)
-admin.site.register(Position)
-admin.site.register(Player)
-admin.site.register(Performance)
-admin.site.register(Match)
-admin.site.register(Trans)
+# Register your models here.
+@admin.register(Team)
+class TeamModeladmin(admin.ModelAdmin):
+    list_display = ['id','name']
+    list_display_links = ['id','name']
+
+
+@admin.register(Host)
+class HostModeladmin(admin.ModelAdmin):
+    list_display = ['id','name']
+    list_display_links = ['id','name']
+
+
+@admin.register(Season)
+class SeasonModeladmin(admin.ModelAdmin):
+    list_display = ['id','name']
+    list_display_links = ['id','name']
+
+
+@admin.register(Jointeam)
+class JointeamModeladmin(admin.ModelAdmin):
+    list_display = ['id','season_id']
+    list_display_links = ['id','season_id']
+
+
+@admin.register(Player)
+class PlayerModeladmin(admin.ModelAdmin):
+    list_display = ['id','name']
+    list_display_links = ['id','name']
+    list_filter = ['name']
+
+
+@admin.register(Match)
+class TeamModeladmin(admin.ModelAdmin):
+    list_display = ['id','season_id']
+    list_display_links = ['id']
+
