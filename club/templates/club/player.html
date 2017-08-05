@@ -1,3 +1,195 @@
 {% extends "layout.html" %}
+
 {% block contents %}
+
+<link rel="stylesheet" href="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.css">
+
+<style type="text/css">
+    body {
+        /*
+        background-image: url("https://media.contentapi.ea.com/content/dam/ea/easports/fifa/fut-champions/player-profiles/default/cgd-playerprofile-hero-bg-lg.jpg");
+        */
+    }
+
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #eceeef;
+    }
+
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #eceeef;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(0, 0, 0, .075);
+    }
+
+    #wrapper{
+        width: 70%;
+        margin: auto;
+        min-height: 500px;
+        /*border:1px solid #000;*/
+    }
+
+    #player_wrapper {
+        width:80%;
+        margin:auto;
+    }
+
+    #player_wrapper .left_block {
+        float: left;
+        width: 40%;
+        padding: 10px;
+    }
+
+    #player_wrapper .right_block {
+        float: left;
+        width: 60%;
+        padding:10px;
+        padding-top:70px;
+        padding-left:50px;
+    }
+
+    #player_recent {
+        clear:both;
+    }
+</style>
+<style>
+    .radar-chart .area {
+        fill-opacity: 0.7;
+    }
+
+    .radar-chart.focus .area {
+        fill-opacity: 0.3;
+    }
+
+    .radar-chart.focus .area.focused {
+        fill-opacity: 0.9;
+    }
+
+    .area.playesr, .germany .circle {
+        fill: #FFD700;
+        stroke: none;
+    }
+
+    .area.player, .player .circle {
+        fill: #ADD8E6;
+        stroke: none;
+    }
+</style>
+<div id="wrapper">
+    <div id="player_wrapper">
+        <div class="left_block">
+            <div>
+                <span style="line-height:2;font-size:30px; ">{{ player.name }}</span>
+                <span style="line-height:2;font-size:20px; ">({{ player.team_id.name }} / {{ player.position_id.name }})</span>
+            </div>
+            <div>
+                <!--#TODO {{player.profile_image}}-->
+                <img alt="" title="" class="eas-hero_image-img" src="http://sleague.or.kr/data/bbsDatap/1490689717_2864_s.jpg">
+            </div>
+        </div>
+        <div class="right_block">
+        </div>
+    </div>
+    <div id="player_recent">
+        <span style="line-height:2;font-size:30px;display: block;padding:5px;">최근경기기록</span>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>일자</th>
+                <th>경기</th>
+                <th>득점</th>
+                <th>3득점</th>
+                <th>2득점</th>
+                <th>자유투</th>
+                <th>리바운드</th>
+                <th>파울</th>
+                <th>어시스트</th>
+                <th>출전시간</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for p in performance %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{p.match_id.date}}</td>
+                    <td>{{p.match_id}}</td>
+                    <td>{{p.total_point}}</td>
+                    <td>{{p.point_2}}</td>
+                    <td>{{p.point_3}}</td>
+                    <td>{{p.free_throw}}</td>
+                    <td>{{p.rebound}}</td>
+                    <td>{{p.foul}}</td>
+                    <td>{{p.assist}}</td>
+                    <td>{{p.play_time}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="http://d3js.org/d3.v3.js"></script>
+        <script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
+
+        <script>
+            RadarChart.defaultConfig.color = function () {
+            };
+            RadarChart.defaultConfig.radius = 3;
+            RadarChart.defaultConfig.w = 400;
+            RadarChart.defaultConfig.h = 400;
+        </script>
+
+        <span></span>
+
+        <script>
+            var data = [
+                {
+                    className: 'player', // optional can be used for styling
+                    axes: [
+                        {axis: "득점", value: 13},
+                        {axis: "리바운드", value: 6},
+                        {axis: "3점슛", value: 5},
+                        {axis: "2점슛", value: 9},
+                        {axis: "파울", value: 2}
+                    ]
+                }
+            ];
+
+            function randomDataset() {
+                return data.map(function (d) {
+                    return {
+                        className: d.className,
+                        axes: d.axes.map(function (axis) {
+                            return {axis: axis.axis, value: Math.ceil(Math.random() * 10)};
+                        })
+                    };
+                });
+            }
+        </script>
+
+        <script>
+            var chart = RadarChart.chart();
+            var cfg = chart.config(); // retrieve default config
+            var svg = d3.select('.right_block').append('svg')
+                .attr('width', cfg.w + cfg.w + 50)
+                .attr('height', cfg.h);
+            svg.append('g').classed('single', 1).datum(randomDataset()).call(chart);
+
+
+        </script>
 {% endblock %}

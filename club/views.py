@@ -1,6 +1,6 @@
 import pickle
 import json
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Host, Season, Team, Player, Position, Match, Performance
 from club.worker import Worker
 
@@ -24,4 +24,9 @@ def insert(request):
     return render(request, 'club/insert.html', context)
 
 def player(request, player_id):
-    return render(request, 'club/player.html')
+    player = get_object_or_404(Player, pk=player_id)
+    performance = []
+    if (player) :
+        performance = Performance.objects.filter(player_id=player).all()
+    context = {'player': player, 'performance':performance}
+    return render(request, 'club/player.html', context)
