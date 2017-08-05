@@ -38,5 +38,3 @@ class TeamModeladmin(admin.ModelAdmin):
     list_display = ['id','season_id']
     list_display_links = ['id']
 
-
-
