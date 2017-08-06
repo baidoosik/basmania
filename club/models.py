@@ -166,3 +166,4 @@ class Trans(models.Model):
 
     def __str__(self):
         str(self.player_id) + ' 의 ' + str(self.from_team_id) + ' 로 부터 ' + str(self.to_team_id) + ' 로 이적'
+

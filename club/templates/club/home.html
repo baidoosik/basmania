@@ -91,7 +91,7 @@
                                 <img style="align-items: center" src="{{ player.profile_image }}" >
                             </p>
                         {% endif %}
-                        <h2 class="title" style="text-align: center">선수정보 링크</h2>
+                        <h2 class="title" style="text-align: center"><a href="{% url 'club:player' player.id %}">Player Career</a></h2>
                     </div>
                 {% endfor %}
                 </div>

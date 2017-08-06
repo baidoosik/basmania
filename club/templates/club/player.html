@@ -2,6 +2,17 @@
 
 {% block contents %}
 
+      <header class="main-header">
+         <div class="container">
+            <div class="header-content">
+                <nav class="site-nav">
+                    <div class="row">
+                        <h2><a href={% url 'club:home' %}>HOME</a></h2>
+                   </div>
+               </nav>
+            </div>
+         </div>
+      </header>
 <link rel="stylesheet" href="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.css">
 
 <style type="text/css">
@@ -39,6 +50,7 @@
     #wrapper{
         width: 70%;
         margin: auto;
+        margin-top: 70px;
         min-height: 500px;
         /*border:1px solid #000;*/
     }
@@ -93,12 +105,12 @@
     <div id="player_wrapper">
         <div class="left_block">
             <div>
-                <span style="line-height:2;font-size:30px; ">{{ player.name }}</span>
+                <span style="line-height:2;font-size:30px;text-align:center ">{{ player.name }}</span><br>
                 <span style="line-height:2;font-size:20px; ">({{ player.team_id.name }} / {{ player.position_id.name }})</span>
             </div>
             <div>
                 <!--#TODO {{player.profile_image}}-->
-                <img alt="" title="" class="eas-hero_image-img" src="http://sleague.or.kr/data/bbsDatap/1490689717_2864_s.jpg">
+                <img alt="" title="" class="eas-hero_image-img" src="{{ player.profile_image }}">
             </div>
         </div>
         <div class="right_block">
@@ -161,16 +173,16 @@
                 {
                     className: 'player', // optional can be used for styling
                     axes: [
-                        {axis: "득점", value: 13},
-                        {axis: "리바운드", value: 6},
-                        {axis: "3점슛", value: 5},
-                        {axis: "2점슛", value: 9},
-                        {axis: "파울", value: 2}
+                        {axis: "득점", value: "{{average_point|escapejs}}"},
+                        {axis: "리바운드", value: "{{average_rebound|escapejs}}"},
+                        {axis: "어시스트", value: "{{average_assist|escapejs}}"},
+                        {axis: "파울", value: "{{average_foul|escapejs}}"}
                     ]
                 }
             ];
 
             function randomDataset() {
+                return data
                 return data.map(function (d) {
                     return {
                         className: d.className,

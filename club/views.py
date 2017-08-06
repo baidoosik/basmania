@@ -51,5 +51,27 @@ def player(request, player_id):
     performance = []
     if (player) :
         performance = Performance.objects.filter(player_id=player).all()
-    context = {'player': player, 'performance':performance}
+        average_point=0
+        average_rebound = 0
+        average_assist = 0
+        average_foul = 0
+        for each_performance in performance:
+            average_point = average_point + each_performance.total_point
+            average_rebound = average_rebound + each_performance.rebound
+            average_assist = average_assist + each_performance.assist
+            average_foul =  average_foul + each_performance.foul
+
+        average_point=average_point/performance.count()
+        average_rebound = average_rebound/performance.count()
+        average_assist = average_assist/performance.count()
+        average_foul = average_foul/performance.count()
+
+    context = {
+        'player': player,
+        'performance':performance,
+        'average_point':average_point,
+        'average_rebound':average_rebound,
+        'average_assist':average_assist,
+        'average_foul':average_foul,
+    }
     return render(request, 'club/player.html', context)
