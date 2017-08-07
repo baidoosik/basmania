@@ -75,3 +75,11 @@ def player(request, player_id):
         'average_foul':average_foul,
     }
     return render(request, 'club/player.html', context)
+
+
+def team_detail(request,pk):
+    team = get_object_or_404(Team,id=pk)
+
+    return render(request,'club/team_detail.html',{
+        'team':team
+    })

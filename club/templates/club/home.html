@@ -33,7 +33,7 @@
                <div class="container">
                   <div class="hero-text align-center">
                      <h1>Dominate your Game</h1>
-                     <p>and set your sails into paradise!</p>
+                     <p>Manage your record!</p>
                   </div>
 
                   <form class="destinations-form">
@@ -103,7 +103,7 @@
                               <div class="col-sm-12 col-xs-24">
                                  <div class="boat-box">
                                     <div class="box-cover">
-                                       <img src="{{ team.profile_image }}" alt="destinationimage" />
+                                        <a href="{% url 'club:team_detail' team.id %}" ><img src="{{ team.profile_image }}" /></a>
                                     </div>
 
                                     <span class="boat-price">U리그 참가팀</span>
