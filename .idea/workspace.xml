@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="88b5648a-ea99-49f2-9af5-8901a64692be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/club/admin.py" afterPath="$PROJECT_DIR$/club/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/club/models.py" afterPath="$PROJECT_DIR$/club/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/club/templates/club/home.html" afterPath="$PROJECT_DIR$/club/templates/club/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/club/templates/club/player.html" afterPath="$PROJECT_DIR$/club/templates/club/player.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/club/views.py" afterPath="$PROJECT_DIR$/club/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/queryset-test.ipynb" afterPath="$PROJECT_DIR$/queryset-test.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,12 +40,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="player.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/club/templates/club/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="178" column="59" lean-forward="false" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="-924">
+              <caret line="108" column="131" lean-forward="false" selection-start-line="108" selection-start-column="131" selection-end-line="108" selection-end-column="131" />
+              <folding>
+                <element signature="e#2247#2302#0#HTML" expanded="true" />
+                <element signature="e#2354#2392#0#HTML" expanded="true" />
+                <element signature="e#2486#2524#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,16 +62,6 @@
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/club/templates/club/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="93" column="126" lean-forward="false" selection-start-line="93" selection-start-column="126" selection-end-line="93" selection-end-column="126" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -124,9 +113,9 @@
         <option value="$PROJECT_DIR$/club/urls.py" />
         <option value="$PROJECT_DIR$/club/admin.py" />
         <option value="$PROJECT_DIR$/club/models.py" />
-        <option value="$PROJECT_DIR$/club/templates/club/player.html" />
         <option value="$PROJECT_DIR$/club/views.py" />
         <option value="$PROJECT_DIR$/club/templates/club/home.html" />
+        <option value="$PROJECT_DIR$/club/templates/club/player.html" />
       </list>
     </option>
   </component>
@@ -138,7 +127,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="66" />
-    <option name="y" value="33" />
+    <option name="y" value="29" />
     <option name="width" value="1327" />
     <option name="height" value="821" />
   </component>
@@ -160,7 +149,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -261,7 +250,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -553,10 +542,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="33" width="1327" height="821" extended-state="0" />
+    <frame x="66" y="29" width="1327" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2622568" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26536965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -600,6 +589,66 @@
     <entry file="file://$PROJECT_DIR$/club/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2520">
+          <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/club/templates/club/player.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="178" column="59" lean-forward="false" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
+          <folding>
+            <element signature="e#2247#2302#0#HTML" expanded="true" />
+            <element signature="e#2354#2392#0#HTML" expanded="true" />
+            <element signature="e#2486#2524#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/club/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="66" column="36" lean-forward="false" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/club/templates/club/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="93" column="126" lean-forward="false" selection-start-line="93" selection-start-column="126" selection-end-line="93" selection-end-column="126" />
+          <folding>
+            <element signature="e#3492#3518#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/club/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basmania/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/club/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
           <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
@@ -611,7 +660,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2670">
           <caret line="178" column="59" lean-forward="false" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="e#2247#2302#0#HTML" expanded="true" />
+            <element signature="e#2354#2392#0#HTML" expanded="true" />
+            <element signature="e#2486#2524#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -700,7 +753,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#3492#3518#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -708,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,7 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -867,11 +918,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/club/templates/club/player.html">
+    <entry file="file://$PROJECT_DIR$/club/templates/club/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="178" column="59" lean-forward="false" selection-start-line="178" selection-start-column="59" selection-end-line="178" selection-end-column="59" />
-          <folding />
+        <state relative-caret-position="1395">
+          <caret line="93" column="126" lean-forward="false" selection-start-line="93" selection-start-column="126" selection-end-line="93" selection-end-column="126" />
+          <folding>
+            <element signature="e#3492#3518#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -885,11 +938,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/club/templates/club/home.html">
+    <entry file="file://$PROJECT_DIR$/club/templates/club/player.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="93" column="126" lean-forward="false" selection-start-line="93" selection-start-column="126" selection-end-line="93" selection-end-column="126" />
-          <folding />
+        <state relative-caret-position="-924">
+          <caret line="108" column="131" lean-forward="false" selection-start-line="108" selection-start-column="131" selection-end-line="108" selection-end-column="131" />
+          <folding>
+            <element signature="e#2247#2302#0#HTML" expanded="true" />
+            <element signature="e#2354#2392#0#HTML" expanded="true" />
+            <element signature="e#2486#2524#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
