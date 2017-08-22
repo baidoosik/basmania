@@ -55,6 +55,7 @@ def player(request, player_id):
         average_rebound = 0
         average_assist = 0
         average_foul = 0
+
         for each_performance in performance:
             average_point = average_point + each_performance.total_point
             average_rebound = average_rebound + each_performance.rebound

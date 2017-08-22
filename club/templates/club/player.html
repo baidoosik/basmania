@@ -6,9 +6,6 @@
          <div class="container">
             <div class="header-content">
                 <nav class="site-nav">
-                    <div class="row">
-                        <h2><a href={% url 'club:home' %}>HOME</a></h2>
-                   </div>
                </nav>
             </div>
          </div>
@@ -102,6 +99,9 @@
     }
 </style>
 <div id="wrapper">
+        <div class="row">
+            <h2><a href={% url 'club:home' %}>HOME</a></h2>
+        </div>
     <div id="player_wrapper">
         <div class="left_block">
             <div>
@@ -162,7 +162,7 @@
         <script>
             RadarChart.defaultConfig.color = function () {
             };
-            RadarChart.defaultConfig.radius = 3;
+            RadarChart.defaultConfig.radius = 10;
             RadarChart.defaultConfig.w = 400;
             RadarChart.defaultConfig.h = 400;
         </script>
@@ -170,11 +170,12 @@
         <span></span>
 
         <script>
+            var point = {{average_point|escapejs}}*0.4
             var data = [
                 {
                     className: 'player', // optional can be used for styling
                     axes: [
-                        {axis: "득점", value: "{{average_point|escapejs}}"},
+                        {axis: "득점", value: point},
                         {axis: "리바운드", value: "{{average_rebound|escapejs}}"},
                         {axis: "어시스트", value: "{{average_assist|escapejs}}"},
                         {axis: "파울", value: "{{average_foul|escapejs}}"}
