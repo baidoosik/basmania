@@ -1,6 +1,7 @@
 import pickle
 import json
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Avg
 from .models import Host, Season, Team, Player, Position, Match, Performance
 from club.worker import Worker
 
@@ -51,20 +52,11 @@ def player(request, player_id):
     performance = []
     if (player) :
         performance = Performance.objects.filter(player_id=player).all()
-        average_point=0
-        average_rebound = 0
-        average_assist = 0
-        average_foul = 0
-        for each_performance in performance:
-            average_point = average_point + each_performance.total_point
-            average_rebound = average_rebound + each_performance.rebound
-            average_assist = average_assist + each_performance.assist
-            average_foul =  average_foul + each_performance.foul
-
-        average_point=average_point/performance.count()
-        average_rebound = average_rebound/performance.count()
-        average_assist = average_assist/performance.count()
-        average_foul = average_foul/performance.count()
+        # a dictionary of name-value pairs.
+        average_point = performance.aggregate(average_point=Avg('total_point'))['average_point']
+        average_rebound = performance.aggregate(average_rebound=Avg('rebound'))['average_rebound']
+        average_assist = performance.aggregate(average_assist=Avg('assist'))['average_assist']
+        average_foul = performance.aggregate(average_foul=Avg('foul'))['average_foul']
 
     context = {
         'player': player,
