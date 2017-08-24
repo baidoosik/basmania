@@ -1,11 +1,26 @@
 {% extends "layout.html" %}
 {% block contents %}
-    <div>
+    <div class="tema_info">
         <h1 style="text-align: center">{{ team.name }}</h1>
-        <h2 style="text-align: center">팀 창단 {{ team.start_date }}</h2>
-        <p style="text-align: center">
-            <img src="{{ team.profile_image }}"></img>
-        </p>
+        {% if "{{ tema.profile_imgae }}" %}
+            <p style="text-align: center">
+                <img src="{{ team.profile_image }}"></img>
+            </p>
+        {% endif %}
+        <div style="text-align: center">
+            <tr>팀 창단년도<td>{{ team.start_date }}</td></tr>
+        </div>
+        <div style="text-align: center">
+            <tr>팀 수상성적
+                <td>수상성적 todo</td>
+            </tr>
+        </div>
+        <div style="text-align: center">
+            <tr>HOME 평균 득점<td>{{ team_home_score|floatformat }}</td></tr>
+        </div>
+        <div style="text-align: center">
+            <tr>AWAY 평균 득점<td>{{ team_away_score|floatformat }}</td></tr>
+        </div>
         <h3 style="text-align: center">{{ team.description }}</h3>
     </div>
 {% endblock %}

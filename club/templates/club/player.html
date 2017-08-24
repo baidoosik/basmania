@@ -107,7 +107,7 @@
             <div>
                 <span style="line-height:2;font-size:30px;text-align:center ">{{ player.name }}</span><br>
                 <span style="line-height:2;font-size:20px; ">({{ player.team_id.name }} / {{ player.position_id.name }})</span><br>
-                <span style="line-height:2;font-size:20px; ">대회 평균 득점 {{ average_point }}</span>
+                <span style="line-height:2;font-size:20px; ">대회 평균 득점 {{ average_point|floatformat }}</span>
             </div>
             <div>
                 <!--#TODO {{player.profile_image}}-->

@@ -73,6 +73,11 @@ def player(request, player_id):
 def team_detail(request,pk):
     team = get_object_or_404(Team,id=pk)
 
+    team_home_score = Match.objects.filter(team1_id=pk).aggregate(team1_score=Avg('team1_score'))['team1_score']
+    team_away_score = Match.objects.filter(team2_id=pk).aggregate(team2_score=Avg('team2_score'))['team2_score']
+
     return render(request,'club/team_detail.html',{
-        'team':team
+        'team':team,
+        'team_home_score':team_home_score,
+        'team_away_score': team_away_score
     })
